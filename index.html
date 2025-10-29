@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NASTEL BANG JUN — Sekali makan geter semua jagat raya</title>
+  <meta name="description" content="NASTEL BANG JUN — Sekali makan geter semua jagat raya. Telur premium, cita rasa kaya, beda dari telur biasa." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f3fbff;
+      --accent:#8ed1ff; /* biru muda */
+      --accent-dark:#5fb6ea;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --radius:14px;
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,var(--bg) 0%, #ffffff 100%);
+      color:#0f172a;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    /* Page container */
+    .container{
+      max-width:var(--maxw);
+      margin:32px auto;
+      padding:24px;
+    }
+
+    /* Header */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo{
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--accent) 0%, var(--accent-dark) 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:800;
+      box-shadow:0 6px 18px rgba(94,150,203,0.18);
+      font-size:20px;
+    }
+    nav{display:none}
+    .cta{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .btn{
+      padding:10px 16px;
+      border-radius:12px;
+      border:0;
+      cursor:pointer;
+      font-weight:600;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    .btn-primary{
+      background:linear-gradient(90deg,var(--accent) 0%,var(--accent-dark) 100%);
+      color:#022b3a;
+      box-shadow:0 8px 20px rgba(79,165,220,0.18);
+    }
+    .btn-ghost{
+      background:transparent;
+      color:var(--muted);
+      border:1px solid rgba(15,23,42,0.06);
+    }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:28px;
+      align-items:center;
+      margin-top:28px;
+    }
+    .hero-left h1{
+      font-size:32px;
+      margin:0 0 10px 0;
+      letter-spacing:-0.02em;
+    }
+    .tagline{
+      color:var(--muted);
+      font-weight:500;
+      margin-bottom:16px;
+    }
+    .kicker{
+      display:inline-block;
+      background:rgba(94,150,203,0.12);
+      color:var(--accent-dark);
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:13px;
+      margin-bottom:10px;
+    }
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+    .features-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+    .feature{
+      background:var(--card);
+      border-radius:12px;
+      padding:14px;
+      box-shadow:0 8px 24px rgba(13,36,66,0.04);
+      min-height:86px;
+    }
+    .feature h4{margin:0 0 6px 0;font-size:15px}
+    .feature p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Hero image card */
+    .hero-right{
+      display:flex;
+      justify-content:center;
+    }
+    .product-card{
+      width:100%;
+      max-width:420px;
+      border-radius:20px;
+      overflow:hidden;
+      background:linear-gradient(180deg, rgba(255,255,255,0.5), rgba(255,255,255,0.7));
+      box-shadow:0 20px 50px rgba(25,90,140,0.08);
+      padding:18px;
+      text-align:center;
+      border:1px solid rgba(10,20,30,0.03);
+    }
+    .product-photo{
+      height:260px;
+      background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      border-radius:12px;
+      margin-bottom:12px;
+      box-shadow:inset 0 -20px 40px rgba(0,0,0,0.06);
+    }
+    .price{
+      font-weight:800;
+      font-size:22px;
+      margin-top:6px;
+    }
+
+    /* Why section / stats */
+    .why{
+      margin-top:32px;
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+    .why-card{
+      background:var(--card);
+      border-radius:12px;
+      padding:12px 16px;
+      flex:1 1 260px;
+      box-shadow:0 10px 30px rgba(15,23,42,0.04);
+    }
+    .why-card h5{margin:0 0 6px 0;font-size:16px}
+    .why-card p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Footer / contact area */
+    footer{
+      margin-top:40px;
+      padding:18px;
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* Responsive */
+    @media(min-width:900px){
+      .hero{
+        grid-template-columns:1fr 420px;
+      }
+      nav{display:block}
+      .features-grid{grid-template-columns:repeat(3,1fr)}
+    }
+    @media(max-width:899px){
+      .features-grid{grid-template-columns:repeat(1,1fr)}
+      .feature{min-height:auto}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">NBJ</div>
+        <div>
+          <div style="font-weight:700">NASTEL BANG JUN</div>
+          <div style="font-size:12px;color:var(--muted)">Sekali makan geter semua jagat raya</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <a href="#features" style="margin-right:18px;color:var(--muted);text-decoration:none">Fitur</a>
+        <a href="#products" style="margin-right:18px;color:var(--muted);text-decoration:none">Produk</a>
+        <a href="#contact" style="color:var(--muted);text-decoration:none">Kontak</a>
+      </nav>
+
+      <div class="cta">
+        <a href="#contact" class="btn btn-ghost">Hubungi</a>
+        <a id="waTopBtn" class="btn btn-primary" href="#" onclick="return openWhatsApp()">Chat WA</a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-left">
+        <span class="kicker">Rasa Premium</span>
+        <h1 id="hero-heading">NASTEL BANG JUN</h1>
+        <p class="tagline">Sekali makan geter semua jagat raya yagesya</p>
+
+        <p style="color:var(--muted);max-width:68%;">Telur yang berbeda dari telur biasa — dimasak dengan kualitas premium dan kaya akan cita rasa. Cocok untuk yang cari pengalaman makan yang menggetarkan selera.</p>
+
+        <div class="hero-cta" style="margin-top:16px">
+          <!-- NOTE: ganti nomor WA pada fungsi openWhatsApp() di bawah -->
+          <a class="btn btn-primary" href="#" onclick="return openWhatsApp()">Pesan via WhatsApp</a>
+          <a class="btn btn-ghost" href="#features">Lihat Fitur</a>
+        </div>
+
+        <!-- Features -->
+        <div id="features" style="margin-top:20px">
+          <div class="features-grid" aria-hidden="false">
+            <div class="feature">
+              <h4>Telur berbeda</h4>
+              <p>Telur yang berbeda dengan telur pada umumnya — unik di tekstur dan tampilan.</p>
+            </div>
+            <div class="feature">
+              <h4>Masak premium</h4>
+              <p>Telur dimasak dengan kualitas yang premium — proses pemasakan khusus untuk rasa terbaik.</p>
+            </div>
+            <div class="feature">
+              <h4>Kaya cita rasa</h4>
+              <p>Kaya akan cita rasa — sensasi rasa yang kuat dan memuaskan dari gigitan pertama.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- quick note -->
+        <div style="margin-top:16px;color:var(--muted);font-size:13px">
+          Gratis konsultasi menu untuk pembelian grosir. Hubungi via WhatsApp.
+        </div>
+      </div>
+
+      <div class="hero-right" aria-hidden="false">
+        <div class="product-card" id="products">
+          <div class="product-photo" role="img" aria-label="Gambar NASTEL BANG JUN"></div>
+          <div style="text-align:left">
+            <div style="font-weight:700;font-size:20px">NASTEL BANG JUN — Paket Eksperimental</div>
+            <p style="color:var(--muted);margin-top:6px;font-size:14px">Pilihan paket untuk coba rasa premium kami.</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px">
+              <div>
+                <div style="font-size:13px;color:var(--muted)">Mulai dari</div>
+                <div class="price">Rp 29.000</div>
+              </div>
+              <div>
+                <a class="btn btn-primary" href="#" onclick="return openWhatsApp()">Pesan Sekarang</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY / TRUST -->
+    <section class="why" aria-label="Keunggulan">
+      <div class="why-card">
+        <h5>Kualitas Premium</h5>
+        <p>Proses dan bahan yang selektif memastikan setiap porsi NASTEL BANG JUN hadir dengan kualitas maksimal.</p>
+      </div>
+      <div class="why-card">
+        <h5>Cita Rasa Unik</h5>
+        <p>Racikan rempah dan teknik masak khusus menghasilkan rasa yang kaya dan tahan lama di lidah.</p>
+      </div>
+      <div class="why-card">
+        <h5>Cocok untuk Semua Suasana</h5>
+        <p>Baik sarapan pagi, cemilan sore, maupun menu spesial — NASTEL BANG JUN siap mengguncang selera.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="margin-top:28px;display:flex;gap:18px;flex-wrap:wrap">
+      <div style="flex:1 1 420px;background:var(--card);padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(10,20,30,0.04)">
+        <h3 style="margin:0 0 8px 0">Hubungi / Pesan</h3>
+        <p style="color:var(--muted);margin:0 0 12px 0">Klik tombol WhatsApp untuk langsung chat ke admin.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn btn-primary" href="#" onclick="return openWhatsApp()">Chat WhatsApp</a>
+          <a class="btn btn-ghost" href="mailto:sales@example.com">Email</a>
+        </div>
+      </div>
+
+      <div style="flex:1 1 260px;background:var(--card);padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(10,20,30,0.04);min-width:260px">
+        <h4 style="margin:0 0 8px 0">Detail</h4>
+        <p style="color:var(--muted);margin:0 0 6px 0">Email: nastelbangjun@gmail.com</p>
+        <p style="color:var(--muted);margin:0">Nomor WA: +62 812-6333-6769</p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> NASTEL BANG JUN — Sekali makan geter semua jagat raya · Dibuat dengan ❤️
+    </footer>
+  </div>
+
+  <script>
+    // ---------- CUSTOMIZE HERE ----------
+    // Ganti angka di bawah dengan nomor WhatsAppmu (format internasional tanpa +, misalnya: 6281234567890)
+    const WHATSAPP_NUMBER = '6281263336769';
+
+    // Default pesan ketika user klik WA (URL encoded)
+    const WA_MESSAGE = encodeURIComponent('Halo, saya mau pesan NASTEL BANG JUN — tolong info paket dan harga.');
+
+    function openWhatsApp(){
+      // opens WhatsApp Web or WA app via wa.me
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${WA_MESSAGE}`;
+      window.open(url, '_blank');
+      return false;
+    }
+
+    // set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Accessibility: allow keyboard "Enter" on call-to-actions that are links with onclick
+    document.querySelectorAll('[onclick]').forEach(el=>{
+      el.setAttribute('role','button');
+      el.setAttribute('tabindex','0');
+      el.addEventListener('keydown',function(e){
+        if(e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          el.click();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
